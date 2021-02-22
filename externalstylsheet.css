@@ -1,35 +1,169 @@
+* {
+    font-family: sans-serif;
+}
+
 .container{
     border: 1px solid black;
+    box-sizing: border-box;
     display: flex ;
-    width: 30%;
-    flex-direction:row ;
+    /* width: 30%; */
+    width: 350px;
+    flex-direction:row;
     justify-content: flex-start;
-flex-wrap: wrap;
-align-items: stretch;
+    flex-wrap: wrap;
+    align-items: stretch;
 }
+
+/* make a small margin l/r to all direct childs */
+.container > * {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 h1{
     width: 100%;
+    margin: 2px;
 }
-.col1{
-    width: 60%;
 
+p {
+    margin: 0;
+    padding: 0;
+    font-size: 11pt;
 }
+
 .fullwidth{
     width: 100%;
 }
-.col2{
-    width: 20%;
-}
-.col3{
-    width: 20%;
-}
-.container >p:nth-child(5){
-    align-content: flex-start;
+
+/* make another flex-box for 3 Columns */
+.container3Columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: stretch;
 
 }
-.border1{
-    border-bottom: 6px solid black;
+
+/* the width for each 3rd column in a row */
+.container3Columns > p:nth-of-type(3n) {
+    width: 20%;
 }
-.border2{
-    border-bottom: black 1px solid;
+
+/* the width for each 1st column in a row */
+.container3Columns > p:nth-of-type(3n+1) {
+    width: 60%;
+}
+
+/* the width for each second column in a row */
+.container3Columns > p:nth-of-type(3n+2) {
+    width: 20%;
+}
+
+/* make the first three p's stay on the bottom of itself */
+.container3Columns > p:nth-of-type(1), 
+.container3Columns > p:nth-of-type(2), 
+.container3Columns > p:nth-of-type(3){
+    align-self: flex-end;
+    /* to align it on the bottom of cell */
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+.container3Columns > p:nth-of-type(3n),
+.container3Columns > p:nth-of-type(3n+2) {
+    text-align: right;
+}
+
+p[class*="flexEnd"] {
+    align-self: flex-end;
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+
+/* BORDERS: */
+
+.border1 {
+    border-top: 6px solid black;
+}
+
+.border2 {
+    border-top: black 1px solid;
+}
+
+.border3 {
+    border-top: 1px solid grey;
+}
+
+p[class*="border3"]:nth-of-type(3n+1){
+    margin-left: 5%;
+    width: 55%;
+
+}
+
+.text {
+    font-size: smaller;
+}
+
+/* make another flex-box for the 4 columns */
+.container4Columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+/* make the font of the p's smaller */
+.container4Columns > p {
+    font-size: small;
+}
+
+/* width of each column */
+.container4Columns > p:nth-of-type(4n+1) {
+    width: 30%;
+}
+
+.container4Columns > p:nth-of-type(4n+2) {
+    width: 30%;
+}
+
+.container4Columns > p:nth-of-type(4n+3) {
+    width: 20%;
+}
+
+.container4Columns > p:nth-of-type(4n) {
+    width: 20%;
+}
+
+.container4Columns > p:nth-of-type(1),
+.container4Columns > p:nth-of-type(2),
+.container4Columns > p:nth-of-type(3),
+.container4Columns > p:nth-of-type(4),
+.container4Columns > p:nth-of-type(25),
+.container4Columns > p:nth-of-type(26),
+.container4Columns > p:nth-of-type(27),
+.container4Columns > p:nth-of-type(28) {
+    border-bottom: 2px solid grey;
+}
+
+p[class="text1"], p[class="text2"] {
+    font-size: small;
+}
+
+.text1 {
+    width: 100%;
+}
+
+.text2container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+        
+}
+
+p[class="text2"] {
+    padding: 0 2px;
 }
