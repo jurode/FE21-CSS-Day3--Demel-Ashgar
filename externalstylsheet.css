@@ -2,9 +2,9 @@
     font-family: sans-serif;
 }
 
+
 .container{
     border: 1px solid black;
-    box-sizing: border-box;
     display: flex ;
     /* width: 30%; */
     width: 350px;
